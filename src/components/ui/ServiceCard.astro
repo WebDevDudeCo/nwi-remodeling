@@ -1,0 +1,47 @@
+---
+import styles from './ServiceCard.module.css';
+
+export interface ServiceCardProps {
+  /** Service title */
+  title: string;
+  /** Service description */
+  description: string;
+  /** URL for the service image */
+  imageUrl: string;
+  /** Alt text for the service image */
+  imageAlt: string;
+  /** URL for the service details page */
+  href: string;
+  /** Additional CSS class names */
+  class?: string;
+  /** Service ID for anchor links */
+  id?: string;
+}
+
+const {
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+  href,
+  class: className = '',
+  id
+} = Astro.props;
+---
+
+<article class={`${styles.card} ${className}`} id={id}>
+  <div class={styles.imageContainer}>
+    <img src={imageUrl} alt={imageAlt} class={styles.image} loading="lazy" width="800" height="600" />
+  </div>
+  <div class={styles.content}>
+    <h3 class={styles.title}>{title}</h3>
+    <p class={styles.description}>{description}</p>
+    <a href={href} class={styles.link} aria-label={`Learn more about ${title}`}>
+      Learn more
+      <svg xmlns="http://www.w3.org/2000/svg" class={styles.arrow} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+</article>

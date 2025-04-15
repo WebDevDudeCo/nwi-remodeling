@@ -1,0 +1,39 @@
+---
+import styles from './Hero.module.css';
+
+export interface HeroProps {
+  /** Hero title */
+  title: string;
+  /** Hero description */
+  description?: string;
+  /** Text alignment */
+  alignment?: 'left' | 'center' | 'right';
+  /** Whether to show a background color */
+  hasBackground?: boolean;
+  /** Whether to include a decorative pattern in the background */
+  withPattern?: boolean;
+  /** Additional CSS class names */
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  alignment = 'left',
+  hasBackground = false,
+  withPattern = false,
+  class: className = ''
+} = Astro.props;
+---
+
+<div class={`${styles.hero} ${hasBackground ? styles.hasBackground : ''} ${withPattern ? styles.withPattern : ''} ${styles[alignment]} ${className}`}>
+  <div class="container">
+    <div class={styles.content}>
+      <h1 class={styles.title}>{title}</h1>
+      {description && <p class={styles.description}>{description}</p>}
+      <div class={styles.buttons}>
+        <slot name="buttons" />
+      </div>
+    </div>
+  </div>
+</div>

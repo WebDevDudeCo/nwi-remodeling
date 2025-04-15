@@ -1,0 +1,42 @@
+---
+import styles from './Button.module.css';
+
+export interface Props {
+  /** The button's variant */
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  /** The button's size */
+  size?: 'small' | 'default' | 'large';
+  /** The button's href (if it's a link) */
+  href?: string;
+  /** Whether the button is disabled */
+  disabled?: boolean;
+  /** Additional CSS class names */
+  class?: string;
+  /** Opens link in a new tab (if href is provided) */
+  external?: boolean;
+}
+
+const {
+  variant = 'primary',
+  size = 'default',
+  href,
+  disabled = false,
+  class: className = '',
+  external = false,
+} = Astro.props;
+
+const Component = href ? 'a' : 'button';
+
+const variantClass = styles[variant];
+const sizeClass = styles[size];
+---
+
+<Component
+  class={`${styles.button} ${variantClass} ${sizeClass} ${className}`}
+  href={href}
+  disabled={disabled}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
+  <slot />
+</Component>
