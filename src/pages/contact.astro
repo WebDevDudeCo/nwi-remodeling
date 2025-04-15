@@ -1,0 +1,372 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import Hero from '../components/ui/Hero.astro';
+import { siteConfig } from '../config/site';
+
+const { company } = siteConfig;
+
+// SEO metadata
+const title = "Contact Elite Remodeling | Get in Touch";
+const description = "Contact Elite Remodeling for professional construction and remodeling services. Request a free quote or schedule a consultation today.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <Hero
+    title="Contact Us"
+    description="Get in touch with our team for inquiries, quotes, or to schedule a consultation"
+    alignment="center"
+    hasBackground={true}
+  >
+  </Hero>
+  
+  <!-- Contact Form Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-container">
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+          
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Your email">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="" selected disabled>Select a service</option>
+                <option value="Kitchen Remodeling">Kitchen Remodeling</option>
+                <option value="Bathroom Remodeling">Bathroom Remodeling</option>
+                <option value="Basement Finishing">Basement Finishing</option>
+                <option value="Home Addition">Home Addition</option>
+                <option value="Whole Home Renovation">Whole Home Renovation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project"></textarea>
+            </div>
+            
+            <div class="form-group full-width">
+              <Button size="large" class="submit-button">Send Message</Button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="contact-info-container">
+          <div class="contact-card">
+            <h3>Contact Information</h3>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <p><a href={`tel:${company.phone}`}>{company.phone}</a></p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <strong>Office Address</strong>
+                <p>{company.address}</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div>
+                <strong>Business Hours</strong>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+            
+            <div class="license-info">
+              <strong>License #: </strong>{company.license}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section bg-alt">
+    <div class="container">
+      <h2 class="text-center mb-8">Find Us</h2>
+      <div class="map-container">
+        <!-- Replace with your actual Google Maps embed code -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215690987712!2d-73.9866540846061!3d40.75787097932677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b30eac9f%3A0x4170c65b516b6c0f!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1649778504282!5m2!1sen!2sus"
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-flex">
+        <div>
+          <h2>Ready to Transform Your Space?</h2>
+          <p>Browse our services to learn more about how we can help bring your vision to life.</p>
+        </div>
+        <div class="cta-buttons">
+          <Button href="/services" size="large">View Services</Button>
+          <Button href="/testimonials" variant="outline" size="large">Read Testimonials</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section {
+    padding: var(--space-12) 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+  
+  .mb-8 {
+    margin-bottom: var(--space-8);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-8);
+  }
+  
+  .contact-form-container,
+  .contact-info-container {
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .contact-form-container h2,
+  .contact-info-container h3 {
+    color: var(--color-heading);
+    margin-bottom: var(--space-4);
+  }
+  
+  .contact-form-container p {
+    margin-bottom: var (--space-6);
+    color: var(--color-text-muted);
+  }
+  
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+  
+  .form-group {
+    margin-bottom: var(--space-4);
+  }
+  
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-background-alt);
+    font-size: var(--text-base);
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-translucent);
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+  
+  .contact-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-item {
+    display: flex;
+    margin-bottom: var(--space-6);
+  }
+  
+  .info-icon {
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--space-3);
+    flex-shrink: 0;
+  }
+  
+  .info-item strong {
+    display: block;
+    margin-bottom: var(--space-1);
+    font-weight: 600;
+  }
+  
+  .info-item p {
+    margin: 0;
+  }
+  
+  .info-item p + p {
+    margin-top: var(--space-1);
+  }
+  
+  .info-item a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  
+  .info-item a:hover {
+    color: var(--color-primary);
+  }
+  
+  .license-info {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .bg-alt {
+    background-color: var(--color-background-alt);
+  }
+  
+  .map-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .cta-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-8);
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-flex {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+      margin-top: var(--space-6);
+    }
+  }
+</style>
+
+<script>
+  // Simple form validation and submission
+  const contactForm = document.getElementById('contactForm') as HTMLFormElement;
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // In a real implementation, you would send the form data to your server
+      // or a form handling service like Formspree, Netlify Forms, etc.
+      
+      const formData = new FormData(contactForm);
+      const formObject = Object.fromEntries(formData.entries());
+      
+      // For demo purposes, log the form data
+      console.log('Form submitted:', formObject);
+      
+      // Show a success message (in a real implementation)
+      alert('Thank you for your message! We will get back to you soon.');
+      
+      // Reset the form
+      contactForm.reset();
+    });
+  }
+</script>

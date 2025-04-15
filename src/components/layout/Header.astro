@@ -1,0 +1,90 @@
+---
+import { siteConfig } from '../../config/site';
+import styles from './Header.module.css';
+
+interface Props {
+  /** Additional CSS class names */
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+// Get the current page path for active link highlighting
+const currentPath = Astro.url.pathname;
+---
+
+<header class={`${styles.header} ${className}`}>
+  <div class={`container ${styles.container}`}>
+    <a href="/" class={styles.logo} aria-label="Go to homepage">
+      {siteConfig.name}
+    </a>
+    
+    <button id="menu-toggle" class={styles.menuToggle} aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+      <span class={styles.menuIcon}></span>
+    </button>
+    
+    <nav id="main-nav" class={styles.nav}>
+      <ul class={styles.navList}>
+        {siteConfig.navLinks.map((link) => (
+          <li class={styles.navItem}>
+            <a 
+              href={link.href} 
+              class={`${styles.navLink} ${currentPath === link.href ? styles.active : ''}`}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      
+      <div class={styles.navAction}>
+        <a href="/contact" class={styles.ctaButton}>Free Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script define:vars={{ navOpenClass: styles.navOpen }}>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    const body = document.body;
+    
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        // Toggle the aria-expanded attribute
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', (!expanded).toString());
+        
+        // Toggle the CSS module navOpen class
+        mainNav.classList.toggle(navOpenClass);
+        
+        // Toggle the menu-open class on body to prevent scrolling
+        body.classList.toggle('menu-open');
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (event) => {
+        if (mainNav && mainNav.classList.contains(navOpenClass) && 
+            !mainNav.contains(event.target) && 
+            menuToggle && !menuToggle.contains(event.target)) {
+          mainNav.classList.remove(navOpenClass);
+          menuToggle.setAttribute('aria-expanded', 'false');
+          body.classList.remove('menu-open');
+        }
+      });
+      
+      // Close mobile menu when pressing Escape key
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mainNav && mainNav.classList.contains(navOpenClass)) {
+          mainNav.classList.remove(navOpenClass);
+          menuToggle?.setAttribute('aria-expanded', 'false');
+          body.classList.remove('menu-open');
+        }
+      });
+    }
+  });
+</script>

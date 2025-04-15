@@ -1,0 +1,492 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/ui/Hero.astro';
+import Button from '../components/ui/Button.astro';
+import ServiceCard from '../components/ui/ServiceCard.astro';
+
+// SEO metadata
+const title = "Our Remodeling Services | Elite Remodeling";
+const description = "Explore our comprehensive remodeling services including kitchen and bathroom renovations, home additions, basement finishing, and more. Quality craftsmanship guaranteed.";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <Hero
+    title="Our Services"
+    description="Professional remodeling services tailored to transform your space"
+    alignment="center"
+    hasBackground={true}
+  >
+  </Hero>
+
+  <!-- Services Navigation -->
+  <nav class="service-nav">
+    <div class="container">
+      <ul class="service-nav-list">
+        <li><a href="#kitchen">Kitchen Remodeling</a></li>
+        <li><a href="#bathroom">Bathroom Remodeling</a></li>
+        <li><a href="#additions">Home Additions</a></li>
+        <li><a href="#basement">Basement Finishing</a></li>
+        <li><a href="#whole-home">Whole Home Renovations</a></li>
+        <li><a href="#outdoor">Outdoor Living</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Kitchen Remodeling -->
+  <section id="kitchen" class="section service-section">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <h2>Kitchen Remodeling</h2>
+          <p>Your kitchen is the heart of your home—a space for cooking, dining, and gathering with family and friends. Our kitchen remodeling services transform outdated spaces into beautiful, functional kitchens that reflect your style and meet your needs.</p>
+          
+          <h3>Our Kitchen Remodeling Services Include:</h3>
+          <ul class="service-list">
+            <li>
+              <strong>Custom Cabinets:</strong> Tailored storage solutions with premium materials and finishes
+            </li>
+            <li>
+              <strong>Premium Countertops:</strong> Quartz, granite, marble, and other high-quality surfaces
+            </li>
+            <li>
+              <strong>Kitchen Islands:</strong> Custom-designed islands for additional workspace and seating
+            </li>
+            <li>
+              <strong>Backsplashes:</strong> Decorative tile work to enhance your kitchen's aesthetic
+            </li>
+            <li>
+              <strong>Flooring:</strong> Durable, stylish options including hardwood, tile, and vinyl
+            </li>
+            <li>
+              <strong>Lighting:</strong> Task, ambient, and accent lighting to brighten your space
+            </li>
+            <li>
+              <strong>Appliance Installation:</strong> Professional installation of new appliances
+            </li>
+          </ul>
+          
+          <div class="service-cta">
+            <Button href="/contact" variant="primary">Get a Free Quote</Button>
+            <Button href="/testimonials" variant="outline">See Kitchen Projects</Button>
+          </div>
+        </div>
+        <div class="service-image">
+          <img src="/images/kitchen-remodel-large.jpg" alt="Modern kitchen renovation with custom cabinets and island" width="600" height="400" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bathroom Remodeling -->
+  <section id="bathroom" class="section service-section bg-alt">
+    <div class="container">
+      <div class="service-grid reverse">
+        <div class="service-content">
+          <h2>Bathroom Remodeling</h2>
+          <p>Transform your bathroom into a personal sanctuary with our comprehensive bathroom remodeling services. Whether you're looking for a luxurious master bath retreat or a practical guest bathroom update, our team delivers beautiful, functional spaces tailored to your lifestyle.</p>
+          
+          <h3>Our Bathroom Remodeling Services Include:</h3>
+          <ul class="service-list">
+            <li>
+              <strong>Custom Showers:</strong> Walk-in showers with premium tile and glass enclosures
+            </li>
+            <li>
+              <strong>Bathtub Installation:</strong> Freestanding, drop-in, and jetted tub options
+            </li>
+            <li>
+              <strong>Vanities:</strong> Custom vanities with quality countertops and fixtures
+            </li>
+            <li>
+              <strong>Tile Work:</strong> Floor-to-ceiling tile installation with decorative accents
+            </li>
+            <li>
+              <strong>Lighting:</strong> Layered lighting solutions for functionality and ambiance
+            </li>
+            <li>
+              <strong>Storage Solutions:</strong> Built-in shelving, cabinets, and organizational features
+            </li>
+            <li>
+              <strong>Accessibility Features:</strong> Grab bars, walk-in tubs, and other aging-in-place options
+            </li>
+          </ul>
+          
+          <div class="service-cta">
+            <Button href="/contact" variant="primary">Get a Free Quote</Button>
+            <Button href="/testimonials" variant="outline">See Bathroom Projects</Button>
+          </div>
+        </div>
+        <div class="service-image">
+          <img src="/images/bathroom-remodel-large.jpg" alt="Luxury bathroom renovation with walk-in shower and freestanding tub" width="600" height="400" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home Additions -->
+  <section id="additions" class="section service-section">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <h2>Home Additions</h2>
+          <p>Need more space? Our home addition services expand your living area with seamlessly integrated new rooms that complement your existing home's architecture and style. From extra bedrooms to expanded living areas, we design and build additions that enhance your home's functionality and value.</p>
+          
+          <h3>Our Home Addition Services Include:</h3>
+          <ul class="service-list">
+            <li>
+              <strong>Room Additions:</strong> Bedrooms, family rooms, offices, and more
+            </li>
+            <li>
+              <strong>Second Story Additions:</strong> Vertical expansions to maximize your lot
+            </li>
+            <li>
+              <strong>Sunrooms:</strong> Light-filled spaces connecting your home to the outdoors
+            </li>
+            <li>
+              <strong>In-Law Suites:</strong> Private living spaces for family members
+            </li>
+            <li>
+              <strong>Expanded Kitchens:</strong> Additional space for cooking and entertaining
+            </li>
+            <li>
+              <strong>Master Suite Additions:</strong> Spacious bedroom retreats with ensuite bathrooms
+            </li>
+            <li>
+              <strong>Garage Conversions:</strong> Transform garage space into functional living areas
+            </li>
+          </ul>
+          
+          <div class="service-cta">
+            <Button href="/contact" variant="primary">Get a Free Quote</Button>
+            <Button href="/testimonials" variant="outline">See Addition Projects</Button>
+          </div>
+        </div>
+        <div class="service-image">
+          <img src="/images/home-addition-large.jpg" alt="Custom home addition with architectural details matching the original house" width="600" height="400" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Basement Finishing -->
+  <section id="basement" class="section service-section bg-alt">
+    <div class="container">
+      <div class="service-grid reverse">
+        <div class="service-content">
+          <h2>Basement Finishing</h2>
+          <p>Unlock the potential of your basement with our professional finishing services. We transform underutilized basement space into beautiful, functional living areas that extend your home's usable square footage and increase its value.</p>
+          
+          <h3>Our Basement Finishing Services Include:</h3>
+          <ul class="service-list">
+            <li>
+              <strong>Entertainment Areas:</strong> Home theaters and game rooms
+            </li>
+            <li>
+              <strong>Basement Bars:</strong> Custom wet or dry bars for entertaining
+            </li>
+            <li>
+              <strong>Guest Suites:</strong> Comfortable bedrooms with ensuite bathrooms
+            </li>
+            <li>
+              <strong>Home Offices:</strong> Productive workspaces away from household distractions
+            </li>
+            <li>
+              <strong>Fitness Rooms:</strong> Dedicated spaces for exercise equipment
+            </li>
+            <li>
+              <strong>Waterproofing:</strong> Solutions to ensure a dry, comfortable environment
+            </li>
+            <li>
+              <strong>Egress Windows:</strong> Code-compliant emergency exits for safety
+            </li>
+          </ul>
+          
+          <div class="service-cta">
+            <Button href="/contact" variant="primary">Get a Free Quote</Button>
+            <Button href="/testimonials" variant="outline">See Basement Projects</Button>
+          </div>
+        </div>
+        <div class="service-image">
+          <img src="/images/basement-finishing-large.jpg" alt="Finished basement with entertainment area and custom lighting" width="600" height="400" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Services -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Additional Services</h2>
+      <p class="text-center mb-8">Discover our full range of home improvement and renovation services</p>
+      
+      <div class="services-grid">
+        <ServiceCard
+          id="whole-home"
+          title="Whole Home Renovations"
+          description="Transform your entire home with comprehensive renovations that update multiple rooms and systems for a cohesive, refreshed living space."
+          imageUrl="/images/whole-home-renovation.jpg"
+          imageAlt="Fully renovated living space with modern finishes"
+          href="/contact"
+        />
+        
+        <ServiceCard
+          id="outdoor"
+          title="Outdoor Living Spaces"
+          description="Extend your living area outdoors with custom decks, patios, outdoor kitchens, and fire pits designed for your lifestyle."
+          imageUrl="/images/outdoor-living.jpg"
+          imageAlt="Custom patio with outdoor kitchen and fireplace"
+          href="/contact"
+        />
+        
+        <ServiceCard
+          title="Aging in Place"
+          description="Modify your home with accessible features that allow for comfortable, safe living as you age, without sacrificing style."
+          imageUrl="/images/aging-in-place.jpg"
+          imageAlt="Accessible bathroom with safety features"
+          href="/contact"
+        />
+        
+        <ServiceCard
+          title="Green Remodeling"
+          description="Eco-friendly renovation options that reduce your home's environmental footprint while increasing energy efficiency."
+          imageUrl="/images/green-remodeling.jpg"
+          imageAlt="Energy-efficient home with sustainable features"
+          href="/contact"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section bg-alt">
+    <div class="container">
+      <h2 class="text-center">Our Remodeling Process</h2>
+      <p class="text-center mb-8">We follow a structured approach to ensure your project runs smoothly from start to finish</p>
+      
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <h3>Consultation</h3>
+          <p>We meet to discuss your goals, vision, budget, and timeline for your project, gathering all the information needed to create your custom plan.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <h3>Design & Planning</h3>
+          <p>Our designers create detailed plans and renderings, working with you to refine every detail until it perfectly matches your vision.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <h3>Material Selection</h3>
+          <p>We guide you through selecting materials, fixtures, and finishes that align with your style preferences and budget.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <h3>Construction</h3>
+          <p>Our skilled craftsmen execute the plan with precision, while our project managers ensure everything stays on schedule and within budget.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <h3>Final Walkthrough</h3>
+          <p>We complete a detailed inspection with you to ensure everything meets our high standards and your expectations.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">6</div>
+          <h3>Follow-Up Support</h3>
+          <p>Our relationship continues after project completion with warranty support and maintenance guidance for your renovated space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="text-center">Ready to Transform Your Space?</h2>
+      <p class="text-center mb-8">Contact us today to schedule a consultation and start your project</p>
+      <div class="text-center">
+        <Button href="/contact" size="large">Request a Free Quote</Button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-secondary-dark);
+    padding: var(--space-3) 0;
+    z-index: 10;
+  }
+  
+  .service-nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    gap: var(--space-6);
+    justify-content: center;
+  }
+  
+  .service-nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+  }
+  
+  .service-nav-list li a:hover {
+    color: var(--color-primary);
+  }
+  
+  .service-section {
+    scroll-margin-top: 60px;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+  
+  .service-grid.reverse {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+  }
+  
+  .service-grid.reverse > * {
+    direction: ltr;
+  }
+  
+  .service-content {
+    padding-right: var(--space-4);
+  }
+  
+  .reverse .service-content {
+    padding-right: 0;
+    padding-left: var(--space-4);
+  }
+  
+  .service-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .service-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .service-list {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+  }
+  
+  .service-list li {
+    margin-bottom: var(--space-3);
+  }
+  
+  .service-cta {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+  
+  .bg-alt {
+    background-color: var(--color-background-alt);
+  }
+  
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+  
+  .process-step {
+    text-align: center;
+    padding: var(--space-6);
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .process-number {
+    background-color: var(--color-primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    font-weight: 700;
+    font-size: var(--text-xl);
+  }
+  
+  .cta-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('/images/cta-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .cta-section h2,
+  .cta-section p {
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .service-grid,
+    .service-grid.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    
+    .service-content,
+    .reverse .service-content {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    
+    .service-image {
+      margin-top: var(--space-6);
+      order: -1;
+    }
+    
+    .reverse .service-image {
+      order: -1;
+    }
+    
+    .service-cta {
+      flex-direction: column;
+    }
+    
+    .service-nav-list {
+      justify-content: flex-start;
+      padding: 0 var(--space-4);
+    }
+  }
+</style>

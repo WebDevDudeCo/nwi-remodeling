@@ -1,0 +1,120 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  border: 2px solid transparent;
+  font-family: inherit;
+}
+
+.button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.secondary:hover,
+.secondary:focus {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.secondary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.outline:hover,
+.outline:focus {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.outline:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.ghost:hover,
+.ghost:focus {
+  background-color: var(--color-background-alt);
+}
+
+/* Sizes */
+.small {
+  padding: 0.5rem 0.75rem;
+  font-size: var(--text-sm);
+  gap: 0.25rem;
+}
+
+.default {
+  padding: 0.75rem 1.25rem;
+  font-size: var(--text-base);
+  gap: 0.5rem;
+}
+
+.large {
+  padding: 1rem 1.75rem;
+  font-size: var(--text-lg);
+  gap: 0.75rem;
+}
+
+/* Disabled state */
+.disabled,
+.disabled:hover,
+.disabled:focus {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Full width button */
+.fullWidth {
+  width: 100%;
+}
