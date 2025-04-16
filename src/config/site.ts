@@ -6,15 +6,15 @@ import type { SiteConfig } from '../types/site';
  * Edit this file to customize for your specific website needs.
  */
 export const siteConfig: SiteConfig = {
-  name: 'Elite Remodeling',
-  title: 'Elite Remodeling - Professional Construction and Remodeling Services',
+  name: 'NWI Remodeling',
+  title: 'NWI Remodeling - Professional Construction and Remodeling Services',
   description: 'Professional construction and remodeling services for kitchens, bathrooms, basements, home additions, and whole-home renovations.',
-  baseUrl: 'https://eliteremodeling.com',
+  baseUrl: 'https://nwiremodeling.com',
   language: 'en',
   openGraph: {
     image: '/images/og-image.jpg',
     twitterCard: 'summary_large_image',
-    twitterSite: '@eliteremodeling'
+    twitterSite: '@nwiremodeling'
   },
   navLinks: [
     { label: 'Home', href: '/' },
@@ -24,21 +24,21 @@ export const siteConfig: SiteConfig = {
     { label: 'Contact', href: '/contact' }
   ],
   footer: {
-    copyright: `© ${new Date().getFullYear()} Elite Remodeling. All rights reserved.`,
+    copyright: `© ${new Date().getFullYear()} NWI Remodeling. All rights reserved.`,
     socialLinks: [
-      { platform: 'Facebook', url: 'https://facebook.com/eliteremodeling', icon: 'facebook' },
-      { platform: 'Instagram', url: 'https://instagram.com/eliteremodeling', icon: 'instagram' },
-      { platform: 'Pinterest', url: 'https://pinterest.com/eliteremodeling', icon: 'pinterest' }
+      { platform: 'Facebook', url: 'https://facebook.com/nwiremodeling', icon: 'facebook' },
+      { platform: 'Instagram', url: 'https://instagram.com/nwiremodeling', icon: 'instagram' },
+      { platform: 'Pinterest', url: 'https://pinterest.com/nwiremodeling', icon: 'pinterest' }
     ],
     links: [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' }
     ]
   },
-  url: 'https://eliteremodeling.com',
+  url: 'https://nwiremodeling.com',
   ogImage: '/images/og-image.jpg',
-  ogImageAlt: 'Elite Remodeling - Professional Construction & Remodeling Services',
-  twitterHandle: '@eliteremodeling',
+  ogImageAlt: 'NWI Remodeling - Professional Construction & Remodeling Services',
+  twitterHandle: '@nwiremodeling',
   footerLinks: {
     main: [
       { label: 'Home', href: '/' },
@@ -55,19 +55,19 @@ export const siteConfig: SiteConfig = {
     ]
   },
   company: {
-    name: 'Elite Remodeling LLC',
+    name: 'NWI Remodeling LLC',
     address: '123 Construction Way, Suite 101, Anytown, USA 12345',
     phone: '(555) 555-5555',
-    email: 'info@eliteremodeling.com',
+    email: 'info@nwiremodeling.com',
     founded: 2005,
     license: 'RMO-123456'
   },
   socialLinks: {
-    facebook: 'https://facebook.com/eliteremodeling',
-    instagram: 'https://instagram.com/eliteremodeling',
-    linkedin: 'https://linkedin.com/company/eliteremodeling',
-    twitter: 'https://twitter.com/eliteremodeling',
-    pinterest: 'https://pinterest.com/eliteremodeling',
-    houzz: 'https://houzz.com/pro/eliteremodeling'
+    facebook: 'https://facebook.com/nwiremodeling',
+    instagram: 'https://instagram.com/nwiremodeling',
+    linkedin: 'https://linkedin.com/company/nwiremodeling',
+    twitter: 'https://twitter.com/nwiremodeling',
+    pinterest: 'https://pinterest.com/nwiremodeling',
+    houzz: 'https://houzz.com/pro/nwiremodeling'
   }
 };
