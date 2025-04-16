@@ -30,6 +30,12 @@
   color: var(--color-primary);
 }
 
+.logoImage {
+  height: 50px; /* Adjust based on your logo's aspect ratio */
+  width: auto;
+  display: block;
+}
+
 .nav {
   display: flex;
   align-items: center;
