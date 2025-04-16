@@ -11,6 +11,8 @@ const { class: className = '' } = Astro.props;
 
 // Get the current page path for active link highlighting
 const currentPath = Astro.url.pathname;
+// Normalize path by removing trailing slash if it exists (except for home page)
+const normalizedPath = currentPath === '/' ? currentPath : currentPath.replace(/\/$/, '');
 ---
 
 <header class={`${styles.header} ${className}`}>
@@ -25,18 +27,23 @@ const currentPath = Astro.url.pathname;
     
     <nav id="main-nav" class={styles.nav}>
       <ul class={styles.navList}>
-        {siteConfig.navLinks.map((link) => (
-          <li class={styles.navItem}>
-            <a 
-              href={link.href} 
-              class={`${styles.navLink} ${currentPath === link.href ? styles.active : ''}`}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noopener noreferrer" : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {siteConfig.navLinks.map((link) => {
+          const linkPath = link.href === '/' ? link.href : link.href.replace(/\/$/, '');
+          const isActive = normalizedPath === linkPath;
+          
+          return (
+            <li class={styles.navItem}>
+              <a 
+                href={link.href} 
+                class={`${styles.navLink} ${isActive ? styles.active : ''}`}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
       
       <div class={styles.navAction}>
